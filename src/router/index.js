@@ -6,6 +6,10 @@ import Detail from '@/components/Detail'
 
 Vue.use(Router)
 
+/**
+ * 1. 컴포넌트 만들기
+ * 2. 라우터에 경로추가
+ */
 export default new Router({
   routes: [
     {
@@ -14,12 +18,14 @@ export default new Router({
       component: Read
     },
     {
-      path: '/create',
+      //?붙여주어 null일때도 적용되게하기
+      path: '/create/:contentId?',
       name: 'Create',
       component: Create
     },
     {
-      path: '/detail/:contentid',
+      // 파라미터로 index값 받아오기
+      path: '/detail/:contentId',
       name: 'Detail',
       component: Detail
     },
